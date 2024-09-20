@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "ReFocus",
+    "version": "1.0",
+    "description": "Helps refocus on your ongoing task rather than waste time!",
+    "icons": {
+        "48": "ReFocus_48.png",
+        "96": "ReFocus_96.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.youtube.com/*"],
+            "js": ["./main.js"]
+        }
+    ],
+    "web_accessible_resources": [{
+        "resources": ["https://picsum.photos/id/*/1200/800"],
+        "matches": ["https://www.youtube.com/*"]
+    }],
+    "action": {
+        "default_title": "Purpose?",
+        "default_popup": "./index.html"
+    },
+    "permissions": [
+        "https://picsum.photos/*"
+    ]
+}
